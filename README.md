@@ -49,6 +49,16 @@ that explains and compares the options. If you're still not sure,
 
 ## Examples
 
+### WebClient constructor without retry when Rate limited
+```javascript
+const { WebClient } = require('@slack/client');
+
+// An access token (from your Slack app or custom integration - xoxp, xoxb, or xoxa)
+const token = process.env.SLACK_TOKEN;
+
+const web = new WebClient(token, {retryConfig: {noRetry: true}});
+```
+
 ### Posting a message with Web API
 
 Your app will interact with the Web API through the `WebClient` object, which a top level export
